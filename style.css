@@ -1,0 +1,889 @@
+/* General Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+/* Basic Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 12%;
+    background: rgb(186, 186, 186);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s ease;
+}
+
+.logo {
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: darkmagenta;
+    text-shadow: 0 0 25px darkmagenta, 0 0 50px darkmagenta;
+    transform: scale(1.2);
+}
+
+span {
+    color: darkmagenta;
+}
+
+.navbar a {
+    font-size: 20px;
+    color: darkmagenta;
+    font-weight: 700;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: darkmagenta;
+    border-bottom: 3px solid darkmagenta;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        display: none; /* Hide the navbar by default */
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navbar a:hover {
+        border-bottom: 3px solid darkmagenta;
+    }
+
+   
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .navbar a:hover {
+        border-bottom: 2px solid darkmagenta;
+    }
+}
+
+/* Home Section */
+#home {
+    margin: 200px;
+}
+
+.home-sec {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 60px;
+    gap: 50px;
+}
+
+.box1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(rgb(255, 0, 255), rgb(253, 253, 4));
+    border-radius: 30%;
+    display: grid;
+    border: 2px dotted black;
+    place-items: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+    margin: 20px 30px;
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.box1 h4 {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+}
+
+.box1 img {
+    width: 40px;
+    height: 40px;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate__backInLeft {
+    font-size: 80px;
+}
+
+.xyz {
+    animation-direction: alternate;
+    font-size: 50px;
+    padding-top: 10px;
+    color: darkmagenta;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buttons {
+    display: flex;
+    padding-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: black;
+    border: 1px dotted darkmagenta;
+    background-color: darkmagenta;
+    color: white;
+    font-weight: 500;
+}
+
+button:hover {
+    background: white;
+    color: darkmagenta;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet (up to 768px) */
+@media screen and (max-width: 768px) {
+
+    /* Adjust header padding */
+    .header {
+        padding: 15px 5%;
+    }
+    #home {
+        margin: 100px;
+    }
+
+    /* Reduce font sizes for logo and navbar */
+    .logo {
+        font-size: 22px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    /* Stack content vertically in home section */
+    .home-sec {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    /* Box size and layout adjustments */
+    .box1 {
+        width: 250px;
+        height: 300px;
+        margin: 10px 0;
+        padding: 15px;
+        padding-left: 20px;
+    }
+
+    .box1 h4 {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .box1 img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Font size adjustments */
+    .xyz {
+        font-size: 40px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    /* Button adjustments */
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+/* Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+
+    /* Adjust header padding */
+    .header {
+        padding: 10px 2%;
+    }
+    #home {
+        margin-top: 100px;
+        margin-left: 70px;
+    }
+
+    /* Reduce logo font size */
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Adjust navbar links */
+    .navbar a {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    /* Adjust home section padding */
+    .home-sec {
+        padding: 20px;
+    }
+
+    /* Box size adjustments */
+    .box1 {
+        width: 150px;
+        height: 200px;
+        margin: 3px 50px;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    .box1 h4 {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .box1 img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Font size adjustments */
+    .xyz {
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    /* Button adjustments */
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        padding: 50px 30px;
+        gap: 30px;
+    }
+
+    .aright h3 {
+        font-size: 22px;
+    }
+
+    .aleft img {
+        width: 250px;  /* Resize image for smaller screens */
+        height: 250px; /* Adjust image height */
+    }
+
+    .aright p {
+        font-size: 16px;
+        padding-top: 10px;
+        text-indent: 15px;
+    }
+
+    .h1 {
+        font-size: 35px;
+    }
+}
+/* Basic Styles for Desktop */
+#about {
+    
+    display: flex;
+    padding: 100px 250px;
+    gap: 100px;
+}
+
+.aright h3 {
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.aleft img {
+    width: 330px; /* or any desired width */
+    height: 300px; /* adjust height if needed */
+    border: 1px;
+}
+
+.h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.aright {
+    display: flex;
+    flex-direction: column;
+}
+
+#about p {
+    text-indent: 25px;
+    text-align: justify;
+    line-height: 25px;
+    padding-top: 20px;
+    color: black;
+    font-family: cursive;
+}
+/* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    #about {
+        
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .aright h3 {
+        font-size: 20px;
+    }
+
+    .aleft img {
+        width: 200px;  /* Further resize image for mobile */
+        height: 200px; /* Adjust image height */
+        margin-left: 60px;
+    }
+
+    .aright p {
+        font-size: 14px;
+        padding-top: 5px;
+        text-indent: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+    }
+
+    .h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+#education{
+    display: flex;
+    padding: 80px 250px;
+    gap: 30px;
+    
+}
+#education h1{
+    font-size: 30px;
+}
+
+#education p{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.eright img{
+    width: 300;
+    height: 400;
+}
+#education h4{
+    padding-top: 15px;
+    padding-left: 70px;
+    
+}
+
+
+/* Responsive Styles */
+
+/* For tablet and smaller screens */
+@media screen and (max-width: 768px) {
+    #education {
+        padding: 40px 20px; /* Reduced padding */
+        flex-direction: column; /* Stack the content vertically */
+        align-items: center; /* Center the content */
+    }
+
+    #education h1 {
+        font-size: 25px; /* Reduce font size for heading */
+        text-align: center; /* Center-align text */
+    }
+
+    #education p {
+        font-size: 16px; /* Reduce font size of paragraph */
+        text-align: center; /* Center-align text */
+        padding-left: 0;
+    }
+
+    .eright img {
+        width: 150px; /* Resize image to fit smaller screens */
+        height: 100px;
+        margin-top: 20px; /* Add margin for spacing */
+    }
+
+    #education h4 {
+        font-size: 16px; /* Reduce font size for the date */
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center-align text */
+    }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+    #education {
+        padding: 20px 10px; /* Reduce padding even further */
+    }
+
+    #education h1 {
+        font-size: 22px; /* Reduce font size */
+        text-align: center;
+    }
+
+    #education p {
+        font-size: 14px; /* Reduce font size */
+        text-align: center;
+    }
+
+    .eright img {
+        width: 220px; /* Resize image */
+        height: 100px;
+    }
+
+    #education h4 {
+        font-size: 14px; /* Reduce font size for the date */
+        text-align: center; /* Center-align text */
+    }
+}
+/* Basic Styles for Desktop */
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 80px;
+}
+
+.items {
+    border: 1px solid;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(39, 39, 39);
+    border: none;
+    background: rgba(0, 0, 0, 0.2); 
+    border-radius: 20px;
+}
+
+.items h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    -webkit-animation: vibrate-3 1s linear infinite alternate;
+    animation: vibrate-3 1s linear infinite alternate;
+}
+
+@keyframes vibrate-3 {
+    0% {
+        position: relative;
+        left: 0px;
+        right: 0px;
+    }
+    100% {
+        position: relative;
+        left: 20px;
+        right: 20px;
+    }
+}
+
+.items h4 {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    border: 1px solid;
+    border-radius: 20px;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.items h4:hover {
+    color: black;
+    transform: scale(1.08);
+    background-color: white;
+}
+
+/* Responsive Styles for Tablet and Mobile Devices */
+
+/* Tablet (up to 768px) */
+@media screen and (max-width: 768px) {
+    .contain {
+        flex-direction: column;
+        padding: 30px;
+        gap: 40px;
+    }
+
+    .items {
+        width: 250px;
+        height: 350px;
+    }
+
+    .items h2 {
+        font-size: 25px;
+        padding: 15px;
+    }
+
+    .items h4 {
+        font-size: 18px;
+        padding: 8px;
+        margin: 8px;
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .contain {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .items {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .items h2 {
+        font-size: 22px;
+        padding: 12px;
+    }
+
+    .items h4 {
+        font-size: 16px;
+        padding: 6px;
+        margin: 6px;
+    }
+
+    /* Optionally, reduce the animation effect on mobile */
+    .items h2 {
+        animation: none;
+    }
+}
+/* Styles for Desktop and Larger Screens */
+#projects h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 50px 400px;
+    row-gap: 30px;
+}
+
+.page img {
+    width: 250px;
+    height: 200px;
+}
+
+.page h2 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.pages {
+    border: 1px solid black;
+    padding: 30px;
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(186, 186, 186);
+    box-shadow: 2px 2px 5px red;
+    transition: transform 0.3s ease;
+}
+
+.pages:hover {
+    transform: scale(1.08);
+}
+
+#projects a {
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    margin-left: 70px;
+    color: black;
+    font-size: 15px;
+    box-shadow: 2px 0px 2px red;
+}
+
+/* Responsive Styles for Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    #projects h1 {
+        font-size: 35px;
+    }
+
+    .page {
+        padding: 50px 30px; /* Adjust padding for smaller screens */
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+    }
+
+    .page img {
+        width: 200px;
+        height: 160px; /* Adjust image size */
+    }
+
+    .page h2 {
+        font-size: 25px;
+        padding-bottom: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .pages {
+        width: 250px;
+        height: 300px;
+        padding: 20px;
+        margin-left: 30px;
+        box-shadow: 2px 2px 5px orange; /* Change shadow for mobile */
+    }
+
+    #projects a {
+        margin-left: 30px; /* Adjust left margin */
+        font-size: 14px;
+
+    }
+}
+
+/* Responsive Styles for Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    #projects h1 {
+        font-size: 28px; /* Smaller font size for header */
+    }
+
+    .page {
+        padding: 20px 20px; /* Reduce padding on mobile */
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .page img {
+        width: 180px; /* Smaller images on mobile */
+        height: 120px;
+      
+        
+    }
+
+    .page h2 {
+        font-size: 20px; /* Smaller font size for project titles */
+        padding-bottom: 10px;
+    }
+
+    .pages {
+        width: 220px; /* Smaller box size */
+        height: 270px;
+        padding: 15px; /* Reduced padding */
+        box-shadow: 2px 2px 5px red; /* Change shadow for mobile */
+        margin-left: 30px;
+    }
+
+    #projects a {
+        margin-left: 0;
+        font-size: 12px; /* Smaller font size for mobile */
+        padding: 8px;
+        margin: 20px 60px;
+        display: inline-block; /* Ensure the link stays on one line */
+        text-align: center; /* Center the text */
+    }
+}
+/* Default Styles for Desktop and Larger Screens */
+#contacts h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+#contacts {
+    padding: 80px 150px;
+}
+
+.cont label {
+    text-align: center;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    
+    margin-left: 450px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.cont span {
+    padding-left: 120px;
+    font-size: 20px;
+}
+
+/* Responsive Styles for Tablets (Max width 768px) */
+@media screen and (max-width: 768px) {
+    #contacts h1 {
+        font-size: 35px;
+    }
+
+    #contacts {
+        padding: 60px 100px;
+    }
+
+    .cont {
+        width: 80%; /* Make the contact form take up more space */
+        margin-left: 10%; /* Center the form */
+        padding: 25px;
+    }
+
+    .cont input,
+    .cont textarea {
+        width: 100%; /* Make inputs and text area full-width */
+    }
+
+    .cont span {
+        padding-left: 0;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+/* Responsive Styles for Mobile Devices (Max width 480px) */
+@media screen and (max-width: 480px) {
+    #contacts h1 {
+        font-size: 30px;
+    }
+
+    #contacts {
+        padding: 40px 20px;
+    }
+
+    .cont {
+        width: 90%; /* Make the form wider on smaller screens */
+        margin-left: 5%; /* Center the form */
+        padding: 20px;
+    }
+
+    .cont input,
+    .cont textarea {
+        width: 100%; /* Full-width inputs for mobile */
+        padding: 12px; /* Add some padding for better touch interaction */
+    }
+
+    .cont span {
+        padding-left: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer h1 {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    margin: 0;
+}
+
+/* Responsive Styles for Smaller Devices */
+
+/* Tablet (up to 768px) */
+@media screen and (max-width: 768px) {
+    footer h1 {
+        font-size: 30px; /* Reduce font size */
+        padding: 10px 0; /* Add some padding for better spacing */
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    footer h1 {
+        font-size: 15px; /* Further reduce font size for small screens */
+        padding: 8px 0; /* Slight padding adjustment */
+    }
+}
